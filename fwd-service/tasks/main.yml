@@ -1,0 +1,11 @@
+---
+# tasks file for fwd-service
+- name: enable a service in firewalld
+  firewalld:
+    service: http
+    state: enabled
+    permanent: true
+  become: true
+  when: ansible_os_family == "RedHat"
+
+  notify: reload firewall

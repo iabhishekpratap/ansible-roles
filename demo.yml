@@ -1,0 +1,6 @@
+---
+- name: install httpd firewall changes
+  hosts: centos
+  roles:
+    - httpd-setup
+    - fwd-service
